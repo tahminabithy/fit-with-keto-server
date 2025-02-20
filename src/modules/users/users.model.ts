@@ -11,7 +11,7 @@ const userSchema = new Schema<Iusers>(
       enum: ["admin", "user"],
       default: "user",
     },
-    password: { type: String, required: true, trim: true },
+    password: { type: String, trim: true },
   },
   {
     timestamps: true,

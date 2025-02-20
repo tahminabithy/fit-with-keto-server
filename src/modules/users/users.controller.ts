@@ -33,8 +33,19 @@ const getSingleUser = catchAsync(async (req, res) => {
   };
   sendResponse(res, data);
 });
+const gmailLogin = catchAsync(async (req, res) => {
+  const body = req.body;
+  const result = await userServices.gmailLoginInDb(body);
+  const data = {
+    status: true,
+    message: "login succesfully",
+    data: result,
+  };
+  sendResponse(res, data);
+});
 export const userController = {
   createUser,
   getSingleUser,
   loginUser,
+  gmailLogin,
 };

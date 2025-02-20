@@ -1,8 +1,10 @@
+import { ObjectId } from "mongoose";
+
 export interface Iusers {
   name: string;
   email: string;
   role: "admin" | "user";
-  password: string;
+  password?: string;
   createdAt: Date;
   updatedAt: Date;
 }
