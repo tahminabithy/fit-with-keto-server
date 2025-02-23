@@ -22,7 +22,19 @@ const getCart = catchAsync(async (req, res) => {
   };
   sendResponse(res, data);
 });
+const deleteCart = catchAsync(async (req, res) => {
+  const id = req.body;
+  console.log(req.body);
+  const result = await orderService.deleteCartFromDb(id);
+  const data = {
+    status: true,
+    message: "Cart deleted successfully",
+    data: result,
+  };
+  sendResponse(res, data);
+});
 export const orderController = {
   addToCart,
   getCart,
+  deleteCart,
 };

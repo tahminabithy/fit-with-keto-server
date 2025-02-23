@@ -3,8 +3,13 @@ import { Icarts, Iorder } from "./orders.interface";
 
 const cartSchema = new Schema<Icarts>(
   {
-    items: [{ type: Schema.Types.ObjectId, required: true, ref: "shop" }],
-    userId: { type: Schema.Types.ObjectId, required: true, ref: "user" },
+    items: [
+      {
+        product: { type: Schema.Types.ObjectId, required: true, ref: "shop" },
+        quantity: { type: Number, required: true },
+      },
+    ],
+    userId: { type: String, required: true, ref: "user" },
     quantity: { type: Number, required: true, default: 0 },
     total: { type: Number, required: true },
   },

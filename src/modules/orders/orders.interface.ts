@@ -1,8 +1,12 @@
 import { ObjectId } from "mongoose";
 
+interface IcartItems {
+  product: ObjectId;
+  quantity: number;
+}
 export interface Icarts {
-  items: ObjectId[];
-  userId: ObjectId;
+  items: IcartItems[];
+  userId: string;
   quantity: number;
   total: number;
 }
