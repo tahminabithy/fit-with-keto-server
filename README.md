@@ -46,4 +46,3 @@ cd fit-with-keto
 
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-CLOUDINARY_URL=your_cloudinary_url
